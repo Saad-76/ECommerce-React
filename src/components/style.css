@@ -1,0 +1,61 @@
+.basic-btn {
+  color: black;
+  font-weight: bold;
+  padding: 3px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 4vh;
+  background-color: #b3b3b3;
+}
+.outer-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../Assets/mountains.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+}
+.search-container {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-inner-container {
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 15px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  opacity: 0.8;
+  z-index: 1;
+  box-shadow: 0cm;
+  width: 23vw;
+}
+.search-description {
+  font-size: 12px;
+}
+
+.search-input {
+  padding: 4px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: rgb(179 179 179 / 41%);
+}
+
+input:focus {
+  outline: none;
+}
+
+.git-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
