@@ -1,12 +1,15 @@
 .basic-btn {
   color: black;
   font-weight: bold;
-  padding: 3px;
+  padding: 4px 8px;
   border: none;
   border-radius: 6px;
   width: 100%;
-  margin-top: 4vh;
   background-color: #b3b3b3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .outer-container {
   height: 100vh;
@@ -58,4 +61,55 @@ input:focus {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+.card-img {
+  height: 180px;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.modal-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.modal-actions-inner {
+  padding: 12px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ---old--- */
+/* .modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 450px;
+  min-height: 250px;
+  padding: 2rem;
+  top: 20%;
+  background-color: white;
+  border-radius: 15px;
+} */
+/* --new-- */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  min-height: 237px;
+  height: auto;
+  width: auto;
+  background-color: white;
+  border-radius: 15px;
 }

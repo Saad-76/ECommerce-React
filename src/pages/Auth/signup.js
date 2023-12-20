@@ -4,7 +4,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-import AuthContainer from "../../components/AuthContainer";
+import AuthContainer from "../../shared-components/AuthContainer";
 import BasicTextField from "../../components/BasicTextField";
 import BasicButton from "../../components/BasicButton";
 import { useNavigate } from "react-router-dom";
@@ -102,7 +102,10 @@ const Signup = () => {
         <FormControlLabel value="false" control={<Radio />} label="No" />
       </RadioGroup>
 
-      <BasicButton text={"Create"} onClick={handleSignup} />
+      <div style={{ marginTop: "3vh" }}>
+        <BasicButton text={"Create"} onClick={handleSignup} />{" "}
+      </div>
+
       <Typography
         sx={{ marginTop: "3vh", fontSize: "12px" }}
         variant="subtitle2"

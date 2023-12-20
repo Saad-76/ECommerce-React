@@ -1,5 +1,5 @@
 import React from "react";
-import AuthContainer from "../../components/AuthContainer";
+import AuthContainer from "../../shared-components/AuthContainer";
 import BasicTextField from "../../components/BasicTextField";
 import BasicButton from "../../components/BasicButton";
 import { Typography } from "@mui/material";
@@ -14,7 +14,10 @@ const Forget = () => {
       description={"Enter Your Email to reset Password"}
     >
       <BasicTextField label={"Email"} type={"text"} />
-      <BasicButton text={"Recover"} onClick={handleForget} />
+      <div style={{ marginTop: "3vh" }}>
+        <BasicButton text={"Recover"} onClick={handleForget} />{" "}
+      </div>
+
       <Typography
         sx={{ marginTop: "3vh", fontSize: "12px" }}
         variant="subtitle2"
