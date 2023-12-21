@@ -32,7 +32,6 @@
   border: 2px solid grey;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   padding: 15px 12px;
   border-radius: 8px;
   backdrop-filter: blur(10px);
@@ -104,12 +103,15 @@ input:focus {
 /* --new-- */
 .modal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   position: absolute;
-  min-height: 237px;
-  height: auto;
-  width: auto;
+}
+.inner-modal {
   background-color: white;
-  border-radius: 15px;
+  border-radius: 12px;
+  padding: 12px;
+}
+.inner-modal h3 {
+  text-align: center;
 }

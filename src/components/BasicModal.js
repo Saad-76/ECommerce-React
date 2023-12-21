@@ -4,23 +4,28 @@ import { createPortal } from "react-dom";
 import "../App.css";
 import BasicButton from "./BasicButton";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ heading, closeModal, children }) => {
   return createPortal(
     <div className="overlay">
       <div className="modal">
-        <h3>Modal</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, libero.
-          Exercitationem quod quam perspiciatis quasi voluptate sint facilis
-          quia praesentium pariatur veniam quidem nam, ullam porro eveniet
-          molestiae minima eligendi.
-        </p>
-        <div className="col-md-12 modal-actions">
-          <div className="col-md-6 modal-actions-inner" >
-            <BasicButton text={`Close`} onClick={closeModal} />
-          </div>
-          <div className="col-md-6 modal-actions-inner">
-            <BasicButton text={`Proceed`} onClick={closeModal} />
+        <div
+          className="inner-modal"
+          style={{
+            width: "50%",
+            height: "auto",
+            top: "0",
+            position: "absolute",
+          }}
+        >
+          <h3>{heading}</h3>
+          {children}
+          <div className="col-md-12 modal-actions">
+            <div className="col-md-6 modal-actions-inner">
+              <BasicButton text={`Close`} onClick={closeModal} />
+            </div>
+            <div className="col-md-6 modal-actions-inner">
+              <BasicButton text={`Proceed`} onClick={closeModal} />
+            </div>
           </div>
         </div>
       </div>

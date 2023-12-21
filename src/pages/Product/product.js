@@ -1,19 +1,11 @@
-import React, { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
+import React from "react";
 import { Grid, Typography } from "@mui/material";
 
 import ProductList from "./productList";
-import BasicModal from "../../components/BasicModal";
-import BasicButton from "../../components/BasicButton";
 import Container from "../../shared-components/Container";
+import AddProducts from "./addProducts";
 
 const Product = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleProduct = () => {
-    setModalOpen(!modalOpen);
-  };
-
   return (
     <>
       <Container>
@@ -28,16 +20,11 @@ const Product = () => {
             <Typography variant="h6">All Products</Typography>
           </Grid>
           <Grid xs={6}>
-            <BasicButton
-              icon={<AddIcon sx={{ color: "black" }} />}
-              text={`Add Product`}
-              onClick={handleProduct}
-            />
+            <AddProducts />
           </Grid>
         </Grid>
         <ProductList />
       </Container>
-      {modalOpen && <BasicModal closeModal={() => setModalOpen(false)} />}{" "}
     </>
   );
 };
