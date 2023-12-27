@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthReducer from "../pages/Auth/authSlice";
-// import DashboardReducer from "../pages/Dashboard/dashboardSlice";
+import ProductReducer from "../pages/Product/productSlice";
+import CartReducer from "../pages/Cart/cartSlice";
 
 const store = configureStore({
   reducer: {
     auth: AuthReducer,
-    // dashboard: DashboardReducer,
+    product: ProductReducer,
+    cart: CartReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

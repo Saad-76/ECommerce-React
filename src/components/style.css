@@ -88,24 +88,13 @@ input:focus {
   align-items: center;
 }
 /* ---old--- */
-/* .modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  width: 450px;
-  min-height: 250px;
-  padding: 2rem;
-  top: 20%;
-  background-color: white;
-  border-radius: 15px;
-} */
+
 /* --new-- */
 .modal {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: absolute;
+  align-items: center;
 }
 .inner-modal {
   background-color: white;

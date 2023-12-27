@@ -6,5 +6,11 @@ const API = {
     SignUp: `${Base}register`,
     // Forget: `${Base}forget`,
   },
+  Product: {
+    Products: `${Base}products`,
+  },
+  Category: {
+    Categories: `${Base}categories`,
+  },
 };
 export default API;

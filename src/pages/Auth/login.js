@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContainer from "../../shared-components/AuthContainer";
 import BasicTextField from "../../components/BasicTextField";
 import BasicButton from "../../components/BasicButton";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LoginRequest } from "./authSlice";
@@ -78,9 +78,9 @@ const Login = () => {
           value={user.password}
           onChange={(e) => handleChange(e)}
         />
-        <div style={{ marginTop: "3vh" }}>
+        <Box style={{ marginTop: "3vh" }}>
           <BasicButton text={"Login"} onClick={handleLogin} />
-        </div>
+        </Box>
         <Typography
           sx={{ marginTop: "3vh", fontSize: "12px" }}
           variant="subtitle2"

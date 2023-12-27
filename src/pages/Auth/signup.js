@@ -8,7 +8,7 @@ import AuthContainer from "../../shared-components/AuthContainer";
 import BasicTextField from "../../components/BasicTextField";
 import BasicButton from "../../components/BasicButton";
 import { useNavigate } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { SignUpRequest } from "./authSlice";
 import { useDispatch } from "react-redux";
@@ -102,9 +102,9 @@ const Signup = () => {
         <FormControlLabel value="false" control={<Radio />} label="No" />
       </RadioGroup>
 
-      <div style={{ marginTop: "3vh" }}>
+      <Box style={{ marginTop: "3vh" }}>
         <BasicButton text={"Create"} onClick={handleSignup} />{" "}
-      </div>
+      </Box>
 
       <Typography
         sx={{ marginTop: "3vh", fontSize: "12px" }}

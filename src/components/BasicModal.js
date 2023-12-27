@@ -12,9 +12,6 @@ const Modal = ({ heading, closeModal, children }) => {
           className="inner-modal"
           style={{
             width: "50%",
-            height: "auto",
-            top: "0",
-            position: "absolute",
           }}
         >
           <h3>{heading}</h3>
