@@ -11,6 +11,7 @@ const API = {
   },
   Category: {
     Categories: `${Base}categories`,
+    Create: `${Base}category`,
   },
 };
 export default API;

@@ -3,13 +3,26 @@ import BasicButton from "../../components/BasicButton";
 import { Grid, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import BasicModal from "../../components/BasicModal";
-import BasicSelect from "../../components/BasicSelect";
+import { useDispatch } from "react-redux";
+import { createCategory } from "./categorySlice";
+import BasicTextField from "../../components/BasicTextField";
 
 const AddCategory = () => {
+  const dispatch = useDispatch();
+  const [category, setCategory] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleCategory = () => {
     setModalOpen(!modalOpen);
+  };
+
+  const handleAddCategory = async () => {
+    await dispatch(
+      createCategory({
+        name: category,
+      })
+    );
+    setModalOpen(false);
   };
 
   return (
@@ -34,7 +47,18 @@ const AddCategory = () => {
               Add Category
             </Typography>
 
-            <BasicSelect label="Category" />
+            <BasicTextField
+              label={"Category"}
+              type={"text"}
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+
+            <BasicButton
+              text={`Add Category`}
+              onClick={handleAddCategory}
+            ></BasicButton>
           </Grid>
         </BasicModal>
       )}

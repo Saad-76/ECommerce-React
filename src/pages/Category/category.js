@@ -1,9 +1,9 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 
-import Container from "../../shared-components/Container";
 import AddCategory from "./addCategory";
 import CategoryList from "./categoryList";
+import Container from "../../shared-components/Container";
 
 const Category = () => {
   return (

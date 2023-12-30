@@ -10,3 +10,14 @@ export const getFromPersistance = (key) => {
 export const removeFromPersistance = (key) => {
   localStorage.removeItem(key);
 };
+export const changeSizeUnit = (bytes) => {
+  const sizeArr = bytes.split(" ");
+  if (sizeArr[1] === "bytes") {
+    return sizeArr[0];
+  } else if (sizeArr[1] === "KB") {
+    return sizeArr[0] * 1024;
+  }
+  if (sizeArr[1] === "MB") {
+    return sizeArr[0] * 1048576;
+  }
+};
