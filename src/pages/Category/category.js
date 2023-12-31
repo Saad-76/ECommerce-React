@@ -13,7 +13,6 @@ const Category = () => {
         flexDirection={"row"}
         alignItems={"center"}
         justifyContent={"space-between"}
-        sx={{ marginTop: "2vh" }}
       >
         <Grid xs={6}>
           <Typography variant="h6">All Categories</Typography>

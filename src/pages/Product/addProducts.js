@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BasicButton from "../../components/BasicButton";
-import { Grid, Typography } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+} from "@mui/material";
 import BasicTextField from "../../components/BasicTextField";
 import AddIcon from "@mui/icons-material/Add";
 import BasicModal from "../../components/BasicModal";
-import BasicSelect from "../../components/BasicSelect";
+import { GetCategories } from "./productSlice";
+import { useDispatch } from "react-redux";
 
 const AddProducts = () => {
+  const dispatch = useDispatch();
+
+  const [category, setCategory] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-
-  const handleProduct = () => {
-    setModalOpen(!modalOpen);
-  };
-
   const [product, setProduct] = useState({
     name: "",
     description: "",
     image: "",
     category_id: "",
   });
+
+  const handleProduct = () => {
+    setModalOpen(!modalOpen);
+  };
 
   const handleChange = (e) => {
     if (e.target.id === "name") {
@@ -30,7 +41,18 @@ const AddProducts = () => {
 
   //   const handleImage = () => {};
 
-  //   const handleCategory = () => {};
+  const handleCategoryChange = (e) => {
+    console.log(e, "trget");
+  };
+
+  const getCategories = async () => {
+    const cat = await dispatch(GetCategories());
+    setCategory(cat.payload.data.categories);
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <>
@@ -40,7 +62,11 @@ const AddProducts = () => {
         onClick={handleProduct}
       />
       {modalOpen && (
-        <BasicModal closeModal={() => setModalOpen(false)}>
+        <BasicModal
+          closeModal={() => setModalOpen(false)}
+          heading={"Add Product"}
+          modalWidth={"30%"}
+        >
           <Grid
             xs={12}
             sx={{
@@ -50,9 +76,6 @@ const AddProducts = () => {
               justifyContent: "center",
             }}
           >
-            <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-              Add Product
-            </Typography>
             <BasicTextField
               label={"Name"}
               type={"text"}
@@ -67,7 +90,26 @@ const AddProducts = () => {
               value={product.description}
               onChange={(e) => handleChange(e)}
             />
-            <BasicSelect label="Category" />
+
+            <Box>
+              <FormControl variant="standard" sx={{ width: "100%" }}>
+                <InputLabel id="demo-simple-select-standard-label">
+                  {"Category"}
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-standard-label"
+                  id="demo-simple-select-standard"
+                  // value={category}
+                  onChange={(e) => handleCategoryChange(e.target.value)}
+                  label={"Category"}
+                >
+                  {category &&
+                    category.map((item) => {
+                      return <MenuItem value={item.id}>{item.name}</MenuItem>;
+                    })}
+                </Select>
+              </FormControl>
+            </Box>
           </Grid>
         </BasicModal>
       )}

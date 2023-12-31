@@ -4,6 +4,7 @@ import BasicModal from "../../components/BasicModal";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
 import BasicCard from "../../components/BasicCard";
+import BasicButton from "../../components/BasicButton";
 
 const Cart = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,6 +14,10 @@ const Cart = () => {
   };
 
   const itemsInCart = useSelector((state) => state.cart.cartItems);
+
+  const handleConfirmPayment = () => {
+    console.log("order api here");
+  };
 
   return (
     <>
@@ -38,7 +43,10 @@ const Cart = () => {
       </Typography>
 
       {modalOpen && (
-        <BasicModal closeModal={() => setModalOpen(false)}>
+        <BasicModal
+          closeModal={() => setModalOpen(false)}
+          heading={`(${itemsInCart?.length}) Items added in Cart`}
+        >
           <Grid
             xs={12}
             sx={{
@@ -48,8 +56,6 @@ const Cart = () => {
               justifyContent: "center",
             }}
           >
-            <Typography variant="h6">Items added in Cart</Typography>
-
             <Grid
               sx={{
                 display: "flex",
@@ -75,6 +81,15 @@ const Cart = () => {
                   img={item.image}
                 />
               ))}
+
+              {itemsInCart.length !== 0 ? (
+                <BasicButton
+                  text={"Confirm Payment"}
+                  onClick={handleConfirmPayment}
+                />
+              ) : (
+                ""
+              )}
             </Grid>
           </Grid>
         </BasicModal>

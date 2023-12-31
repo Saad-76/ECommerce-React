@@ -10,6 +10,7 @@ import Setting from "../pages/Setting/setting";
 import Product from "../pages/Product/product";
 import Category from "../pages/Category/category";
 import Dashboard from "../pages/Dashboard/dashboard";
+// import PaymentForm from "../pages/Cart/payment";
 
 const Router = () => {
   return (
@@ -30,6 +31,10 @@ const Router = () => {
         element={<PrivateRoutes Component={Category} />}
       />
       <Route path="/setting" element={<PrivateRoutes Component={Setting} />} />
+      {/* <Route
+        path="/payment-form"
+        element={<PrivateRoutes Component={PaymentForm} />}
+      /> */}
     </Routes>
   );
 };

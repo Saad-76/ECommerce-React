@@ -99,8 +99,9 @@ input:focus {
 .inner-modal {
   background-color: white;
   border-radius: 12px;
-  padding: 12px;
+  padding: 12px 12px 25px 12px;
+  position: absolute;
 }
-.inner-modal h3 {
+/* .inner-modal h3 {
   text-align: center;
-}
+} */
